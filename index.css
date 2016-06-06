@@ -1,0 +1,27 @@
+.container{
+	position:relative;
+	top:14em;
+	left:28%;
+	width:600px;
+	text-align:center;
+}
+.buttons{
+	position:relative;
+	top:14em;
+	left:42%;
+}
+/*
+#addData{
+	position:relative;
+	left:-8em;
+}
+#viewData{
+	position:relative;
+	left:11.7em;
+}
+*/
+button{
+	border-radius:4px;
+	height:2em;
+	vertical-align:middle;
+}
