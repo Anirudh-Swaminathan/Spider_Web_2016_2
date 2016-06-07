@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Add Student</title>
+	</head>
+	<body>
+		<form action="addStud.php" method="POST">
+			<header>Add Student</header>
+			<label>Name</label>
+			<input required name="Name" pattern="[a-zA-Z]+[a-zA-Z\s]+" title="Enter only alphabets and spaces" id="Name"/>
+			<br/>
+			
+			<label>Roll Number</label>
+			<input required name="Roll" maxlength="9" pattern="\d{9}" title="Enter exactly 9 digits" id="Roll"/>
+			<br/>
+			
+			<label>Department</label>
+	<!--<input required name="dept" />-->
+			<select required name = "dept" id="dept">
+				<option value="Architecture">Architecture</option>
+				<option value="Chemical">Chemical</option>
+				<option value="Civil">Civil</option>
+				<option value="CSE">CSE</option>
+				<option value="ECE">ECE</option>
+				<option value="EEE">EEE</option>
+				<option value="ICE">ICE</option>
+				<option value="Mechanical">Mechanical</option>
+				<option value="MME">MME</option>
+				<option value="Production">Production</option>
+			</select>
+			<br/>
+	
+			<label>Email</label>
+			<input required name="email" type="email" placeholder="Enter you web-mail" id="email"/>
+			<br/>
+			
+			<label>Postal Address</label>
+			<textarea required name="address" rows="5" cols="20"></textarea>
+			<br/>
+			
+			<label>About me</label>
+			<textarea name="about" rows="4" cols="30"></textarea>
+			<br/>
+			
+			<button id="register">Add Student</button>
+			
+		</form>
+	</body>
+</html>
