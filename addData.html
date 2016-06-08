@@ -7,9 +7,9 @@
 		<form action="addStud.php" method="POST">
 			<header>Add Student</header>
 			<label>Name</label>
-			<input required name="Name" pattern="[a-zA-Z]+[a-zA-Z\s]+" title="Enter only alphabets and spaces" id="Name"/>
+			<input required name="Name" pattern="[a-zA-Z][a-zA-Z ]+|[a-zA-Z]" title="Enter only alphabets and spaces" id="Name"/>
 			<br/>
-			
+			<!--Pattern is [a-zA-Z ]*$ [a-zA-Z]+[a-zA-Z\s]+-->
 			<label>Roll Number</label>
 			<input required name="Roll" maxlength="9" pattern="\d{9}" title="Enter exactly 9 digits" id="Roll"/>
 			<br/>
@@ -31,7 +31,7 @@
 			<br/>
 	
 			<label>Email</label>
-			<input required name="email" type="email" placeholder="Enter you web-mail" id="email"/>
+			<input required name="email" maxlength="18" type="email" placeholder="Enter you web-mail" id="email"/>
 			<br/>
 			
 			<label>Postal Address</label>
@@ -42,8 +42,11 @@
 			<textarea name="about" rows="4" cols="30"></textarea>
 			<br/>
 			
-			<button id="register">Add Student</button>
+			<button id="register" onclick="return btnClick()">Add Student</button>
 			
 		</form>
+		
+		<script type="text/javascript" src='addData.js' >
+		</script>
 	</body>
 </html>
