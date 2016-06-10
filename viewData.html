@@ -6,6 +6,13 @@
         <title>View Student</title>
     </head>
     <body>
-        
+        <form action = "viewStud.php" method="GET">
+			<header>View Student</header>
+			<label>Roll Number</label>
+			<input required name="Roll" maxlength="9" pattern="^[0-9]{9}$" title="Enter exactly 9 digits" id="Roll"/>
+			<br/>
+			
+			<button id="viewStud" onclick="return viewS()">View Student Details</button>
+		</form>
     </body>
 </html>

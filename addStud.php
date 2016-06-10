@@ -111,23 +111,31 @@ function random_str($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzAB
     $str = '';
     $max = mb_strlen($keyspace, '8bit') - 1;
     for ($i = 0; $i < $length; ++$i) {
-        $str .= $keyspace[rand(0, $max)];
+        $str .= $keyspace[mt_rand(0, $max)];
     }
     return $str;
 }
 $pass = random_str(8);
 
 if(validateInp($name,$roll,$dept,$email,$address)){
+	$roll = (int) $roll;
 	//echo "Data entered is $name <br/>$roll<br/>$dept<br/>$email<br/>$address<br/>$about<br/>$pass";
 	//echo "<script>alert('Inserting now');</script>";
-	$mysql_qry = "insert into spider_2016_2(Roll,Name,Dept,Email,Address,About,Password) values('$roll','$name','$dept','$email','$address','$about','$pass')";
-	if(mysqli_query($conn,$mysql_qry)){
+	
+	//$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
+	//$stmt->bind_param("sss", $firstname, $lastname, $email);
+	$mysql_qry = $conn->prepare("insert into spider_2016_2(Roll,Name,Dept,Email,Address,About,Password) values(?,?,?,?,?,?,?)");
+	$mysql_qry->bind_param("issssss",$roll,$name,$dept,$email,$address,$about,$pass);
+	$bo = $mysql_qry->execute();
+	//$mysql_qry = "insert into spider_2016_2(Roll,Name,Dept,Email,Address,About,Password) values('$roll','$name','$dept','$email','$address','$about','$pass')";
+	if($bo){
 		echo "<br/>New Record created succesfully";
 		echo "<br/>Password is $pass";
 		$message = "Your password is $pass";
-		echo "<script>alert('$message');</script>";
-		echo "<script>alert('Please remember your password is $pass');  window.location.href='/Spider_2016_2/';</script>";
-	
+		echo "<script type='text/javascript'>alert('$message');</script>";
+		echo "<script type='text/javascript'>alert('Please remember your password is $pass');window.location.href='/Spider_2016_2/';</script>";
+		//header('Location: http://localhost/Spider_2016_2/');
+		//exit;
 	//$redirect_page = '/Spider_2016_2/';
 	}
 	else{
@@ -135,11 +143,16 @@ if(validateInp($name,$roll,$dept,$email,$address)){
 		$message = "Unsuccessful!!";
 		echo "<script type='text/javascript'>alert('$message');window.location.href='/Spider_2016_2/addData.html';</script>";
 	//$redirect_page = '/Spider_2016_2/addData.html';
-	
+		//header('Location: http://localhost/Spider_2016_2/addData.html');
+		//exit;
 	}
+	$mysql_qry->close();
+	$conn->close();
 }
 else{
 	echo "<script type='text/javascript'>alert('$message');window.location.href='/Spider_2016_2/addData.html';</script>";
+	//header('Location: http://localhost/Spider_2016_2/addData.html');
+	//exit;
 }
 //header('Location: '.$redirect_page);
 ?>
