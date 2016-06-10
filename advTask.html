@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Advanced Tasks</title>
+	</head>
+	<body>
+		<a href="viewAll.php"><button id="viewAll">View All</button></a>
+		<br/>
+		<br/>
+		<a href="viewName.php"><button id="sortName">View All in sorted name</button></a>
+		<br/>
+		<br/>
+		<a href="viewRoll.php"><button id="sortRoll">View All in sorted Roll</button></a>
+		<br/>
+		<br/>
+		<a href="viewDeptA.php"><button id="">View All Department Wise</button></a>
+		<br/>
+		<br/>
+		<form action="viewDep.php" method="GET">
+			<label>Department</label>
+	<!--<input required name="dept" />-->
+			<select required name = "dept" id="dept">
+				<option value="Architecture">Architecture</option>
+				<option value="Chemical">Chemical</option>
+				<option value="Civil">Civil</option>
+				<option value="CSE">CSE</option>
+				<option value="ECE">ECE</option>
+				<option value="EEE">EEE</option>
+				<option value="ICE">ICE</option>
+				<option value="Mechanical">Mechanical</option>
+				<option value="MME">MME</option>
+				<option value="Production">Production</option>
+			</select>
+			<br/>
+			<br/>
+			<button id="deptChoose" onclick="return btnClick()">View All in a department</button>
+		</form>
+		
+		<script type="text/javascript" src='advTask.js' >
+		</script>
+	</body>
+</html>

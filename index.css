@@ -20,3 +20,15 @@ a{
 	text-decoration:none;
 	color:black;
 }
+#addData{
+	position:relative;
+	left:-3em;
+}
+#viewData{
+	position:relative;
+	left:-3em;
+}
+#advTask{
+	position:relative;
+	left:-3em;
+}
