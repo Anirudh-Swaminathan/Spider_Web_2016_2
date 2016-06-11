@@ -25,7 +25,7 @@ function validateInp($d){
 $dept = $_GET["dept"];
 //echo "Data entered is $roll<br/>";
 if(validateInp($dept)){
-	$sql = $conn->prepare("SELECT Name,Roll,Dept,Email,Address,About FROM spider_2016_2 where Dept = ?");
+	$sql = $conn->prepare("SELECT Name,Roll,Dept,Email,Address,About FROM spider_2016_2 where Dept = ? order by Roll ASC");
 	$sql->bind_param("s",$dept);   
 	$sql->execute();
 	
