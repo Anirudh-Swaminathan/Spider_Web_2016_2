@@ -4,6 +4,7 @@
     There must be 2 functions in the basic mode
 * Add Student
 * View Student
+
     The advanced mode includes the following:-
     
 * [X] View all students
