@@ -66,10 +66,12 @@ The table consists of 7 columns. The type, and name is as follows:-
 ### Build Instructions
 > The website uses **WAMP Server**, which is used for running PHP Code, in Windows.
 > The first step is to download it if it is not present in your workspace.
+<br/>
 > For windows users,the link for the download can be found [HERE](http://www.wampserver.com/en/)
 > Since WAMP is available only in Windows, an alternative could be XAMPP.
 > Mac OS, and Linux users can click on [THIS](https://www.apachefriends.org/download.html) link 
 > to download XAMPP in their respective devices.
+<br/>
 > After installation, start the server by clicking on the exe file(Windows).
 > The username is **root** and the password is *Cjul1968ScB*. This is to ensure compatibility with the
 > code written by me.
