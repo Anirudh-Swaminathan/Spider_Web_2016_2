@@ -28,9 +28,14 @@
 - POST /addData.html
 - GET /viewData?Roll=*roll*
 - GET /viewDep?Dept=*dept*
+
 ### Tables used in the database
 The database used was a MySQL database. The database name here was **spider_2016**
+<br/>
+<br/>
 The table name used is **spider_2016_2**
+<br/>
+<br/>
 The table consists of 7 columns. The type, and name is as follows:-
 <table>
 <tr>
