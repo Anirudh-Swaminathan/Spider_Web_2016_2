@@ -88,7 +88,7 @@ The table consists of 7 columns. The type, and name is as follows:-
 <br/>
 <br/>
 > Download all the files and save them in a folder name *Spider_2016_2*.
-> Save that folder in the **www** folder created during installation. By default, it is in C:/Users/wamp64/www/
+> Save that folder in the **www** folder created during installation. By default, it is in C:/wamp64/www/
 <br/>
 <br/>
 > Start your favourite browser.
