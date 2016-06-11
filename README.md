@@ -2,14 +2,14 @@
 ### Overview Of The Project
     The task given was to create a website for student management.
     There must be 2 functions in the basic mode
-    - Add Student
-    - View Student
+* Add Student
+* View Student
     The advanced mode includes the following:-
-    [X] View all students
-    [X] Group all students in ascending order or name
-    [X] Group all students in ascending order of Roll Number
-    [X] Group all students Department Wise
-    [ ] Paginate the contents of the website.
+[X] View all students
+[X] Group all students in ascending order or name
+[X] Group all students in ascending order of Roll Number
+[X] Group all students Department Wise
+[ ] Paginate the contents of the website.
     
     The language used by me was PHP. NO Frameworks or modules were used.
     The Database used was a MySQL Database.
@@ -22,9 +22,9 @@
     The advanced tasks were completed next using simple SQL Queries.
 ### List Of Server Routes
     The list of server routes is as follows:-
-    - POST /addData.html
-    - GET /viewData?Roll=*roll*
-    - GET /viewDep?Dept=*dept*
+- POST /addData.html
+- GET /viewData?Roll=*roll*
+- GET /viewDep?Dept=*dept*
 ### Tables used in the database
 The database used was a MySQL database. The database name here was **spider_2016**
 The table name used is **spider_2016_2**
@@ -88,5 +88,6 @@ The table consists of 7 columns. The type, and name is as follows:-
 <br/>
 <br/>
 > Enjoy using my website. :smiley:
+
 ### Screenshots
     Coming soon!!
