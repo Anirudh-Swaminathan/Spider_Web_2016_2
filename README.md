@@ -98,4 +98,6 @@ The table consists of 7 columns. The type, and name is as follows:-
 > Enjoy using my website. :smiley:
 
 ### Screenshots
-    Coming soon!!
+1. Index Page
+<br/>
+![Index Page Screenshot](/../screenshots/Screenshots/index.png?raw=true "Index Page")
