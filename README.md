@@ -5,11 +5,12 @@
 * Add Student
 * View Student
     The advanced mode includes the following:-
-[X] View all students
-[X] Group all students in ascending order or name
-[X] Group all students in ascending order of Roll Number
-[X] Group all students Department Wise
-[ ] Paginate the contents of the website.
+    
+* [X] View all students
+* [X] Group all students in ascending order or name
+* [X] Group all students in ascending order of Roll Number
+* [X] Group all students Department Wise
+* [ ] Paginate the contents of the website.
     
     The language used by me was PHP. NO Frameworks or modules were used.
     The Database used was a MySQL Database.
@@ -20,6 +21,7 @@
     Next View Student was completed,implementing both client side and server side
     validation. SQL Injection was also prevented using Prepared SQL Statements.
     The advanced tasks were completed next using simple SQL Queries.
+    
 ### List Of Server Routes
     The list of server routes is as follows:-
 - POST /addData.html
