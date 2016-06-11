@@ -75,10 +75,13 @@ The table consists of 7 columns. The type, and name is as follows:-
 > After installation, start the server by clicking on the exe file(Windows).
 > The username is **root** and the password is *Cjul1968ScB*. This is to ensure compatibility with the
 > code written by me.
+<br/>
 > Download all the files and save them in a folder name *Spider_2016_2*.
 > Save that folder in the **www** folder created during installation. By default, it is in C:/Users/wamp64/www/
+<br/>
 > Start your favourite browser.
 > Type in *http://localhost/Spider_2016_2/* in the box provided.
+<br/>
 > Enjoy using my website. :smiley:
 ### Screenshots
     Coming soon!!
