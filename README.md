@@ -101,3 +101,44 @@ The table consists of 7 columns. The type, and name is as follows:-
 1. Index Page
 <br/>
 ![Index Page Screenshot](/../screenshots/Screenshots/index.png?raw=true "Index Page")
+2. Add Data Page
+<br/>
+![Add Page Screenshot](/../screenshots/Screenshots/add_data.png?raw=true "Add Data Page")
+3. Response Page for add data
+<br/>
+![Response Page Screenshot](/../screenshots/Screenshots/add_data_auth.png?raw=true "Response Page")
+4. View Data Page
+<br/>
+![View Page Screenshot](/../screenshots/Screenshots/view_data.png?raw=true "View Data Page")
+5. Response Page for view data
+<br/>
+![Response Page Screenshot](/../screenshots/Screenshots/view_data_auth.png?raw=true "Response Page")
+6. Edit Data Page
+<br/>
+![Edit Page Screenshot](/../screenshots/Screenshots/edit_data.png?raw=true "Edit Data Page")
+7. Response Page for edit data
+<br/>
+![Response Page Screenshot](/../screenshots/Screenshots/edit_data_auth.png?raw=true "Response Page")
+8. Advanced Tasks Page
+<br/>
+![Advance Page Screenshot](/../screenshots/Screenshots/advance.png?raw=true "Advance Page")
+9. View All Page
+<br/>
+![View All Page Screenshot](/../screenshots/Screenshots/view_all.png?raw=true "View All Page")
+10. View All Name Wise
+<br/>
+![View Name Page Screenshot](/../screenshots/Screenshots/view_name.png?raw=true "View Name Page")
+11. View All Roll Number Wise
+<br/>
+![View Roll Page Screenshot](/../screenshots/Screenshots/view_roll.png?raw=true "View Roll Page")
+12. View All Department Wise
+<br/>
+![View Deptwise Page Screenshot](/../screenshots/Screenshots/view_dept_all.png?raw=true "View Deptwise Page")
+13. View All in Particular Department
+<br/>
+![View Dept Page Screenshot](/../screenshots/Screenshots/view_dept.png?raw=true "View Dept Page")
+11. View All Name Wise
+<br/>
+![Response Dept Page Screenshot](/../screenshots/Screenshots/view_dept_auth.png?raw=true "Response Dept Page")
+
+
