@@ -67,20 +67,25 @@ The table consists of 7 columns. The type, and name is as follows:-
 > The website uses **WAMP Server**, which is used for running PHP Code, in Windows.
 > The first step is to download it if it is not present in your workspace.
 <br/>
+<br/>
 > For windows users,the link for the download can be found [HERE](http://www.wampserver.com/en/)
 > Since WAMP is available only in Windows, an alternative could be XAMPP.
 > Mac OS, and Linux users can click on [THIS](https://www.apachefriends.org/download.html) link 
 > to download XAMPP in their respective devices.
 <br/>
+<br/>
 > After installation, start the server by clicking on the exe file(Windows).
 > The username is **root** and the password is *Cjul1968ScB*. This is to ensure compatibility with the
 > code written by me.
 <br/>
+<br/>
 > Download all the files and save them in a folder name *Spider_2016_2*.
 > Save that folder in the **www** folder created during installation. By default, it is in C:/Users/wamp64/www/
 <br/>
+<br/>
 > Start your favourite browser.
 > Type in *http://localhost/Spider_2016_2/* in the box provided.
+<br/>
 <br/>
 > Enjoy using my website. :smiley:
 ### Screenshots
