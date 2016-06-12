@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	
+	//Get the session variables declared in viewStud.php
+	//Make the user resubmit details on page reload.
 	header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 	header("Cache-Control: post-check=0, pre-check=0", false);
 	header("Pragma: no-cache");

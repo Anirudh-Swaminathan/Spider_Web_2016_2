@@ -1,8 +1,9 @@
+//Client side validation for the data entered in editData.php
 function btnClick(){
-	//alert("Hi There. I am going to submit.");
 	return validate();
 }
 function validate(){
+	//Get the name and password.
 	var n = document.getElementById("Name").value;
 	var p = document.getElementById("Pass").value;
 	//Test name
@@ -15,6 +16,7 @@ function validate(){
 		alert('Name shouldn\'t contain any number');  
 		return false;
 	 } 
+	 //Password musn't be null
 	 if(p === ""){
 		 alert('Password must not be null');
 		 return false;

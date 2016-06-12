@@ -5,20 +5,23 @@
 </head>
 <body>
 <?php
+//Connect to th database
 require "connect.php";
-//echo "Connected to $db_name";
-
-
+//Must resubmit form on reload
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
+//The error messages are set in this variable $message
 $message = "Hello";
 
+//A function to validate all the inputs
 function validateInp($n,$r,$d,$e,$ad){
 	
+	//Accessing the $message variable declared outside the scope of this function.
 	global $message;
 	
+	//Check name
 	if(!(preg_match('/[a-zA-Z][a-zA-Z ]+|[a-zA-Z]$/',$n))){
 		$message = "Name should contain only aphabets and spaces";
 		echo "<script>alert('$message');</script>";
@@ -35,6 +38,8 @@ function validateInp($n,$r,$d,$e,$ad){
 		return false;
 
 	}
+	
+	//Check roll number for valid details
 	if(!(preg_match("/^[0-9]{9}$/",$r))){
 		$message = "Invalid roll number";
 		echo "<script>alert('$message');</script>";
@@ -55,20 +60,22 @@ function validateInp($n,$r,$d,$e,$ad){
 		echo "<script>alert('$message');</script>";
 		return false;
 	}
-	//alert(''+Math.floor(r/Math.pow(10,6)));
+	
 	//Department Checking
 	if(!(floor($r/pow(10,6)) ==102 && !strcmp($d,"Chemical")||floor($r/pow(10,6)) ==106 && !strcmp($d,"CSE")
 		||floor($r/pow(10,6)) ==107 && !strcmp($d,"EEE")||floor($r/pow(10,6)) ==101 && !strcmp($d,"Architecture")
 	||floor($r/pow(10,6)) ==103 && !strcmp($d,"Civil")||floor($r/pow(10,6)) ==108 && !strcmp($d,"ECE")
 	||floor($r/pow(10,6)) ==110 && !strcmp($d,"ICE")||floor($r/pow(10,6)) ==111 && !strcmp($d,"Mechanical")
 	||floor($r/pow(10,6)) ==112 && !strcmp($d,"MME")||floor($r/pow(10,6)) ==114 && !strcmp($d,"Production"))){
-		//alert('Incorrect department for entered roll Number');
+		
 		$message = "Incorrect department for entered roll Number";
 		echo "<script>alert('$message');</script>";
 		return false;
 	}
+	
+	//Check if it is a valid email
 	if(strlen($e)!=18){
-		//alert('Enter valid email. Should be \'your roll number\'@nitt.edu');
+		
 		$message = "Enter valid email. Should be \'your roll number\'@nitt.edu";
 		echo "<script>alert('$message');</script>";
 		return false;
@@ -76,28 +83,30 @@ function validateInp($n,$r,$d,$e,$ad){
 	else{
 		$ro = substr($e,0,9);
 		$en = substr($e,9,18);
-		//alert('ro is '+ro+'\nen is '+en);
+		
 		if(strcmp($ro,$r)){			
-			//alert("Valid Email is'your roll number'@nitt.edu");
+			
 			$message = "Valid Email is'your roll number'@nitt.edu";
 			echo "<script>alert('$message');</script>";
 			return false;
 		}
 		if(strcmp($en,"@nitt.edu")){
-			//alert("Valid Email is 'your roll number'@nitt.edu");
+			
 			$message = "Valid Email is 'your roll number'@nitt.edu";
 			echo "<script>alert('$message');</script>";
 			return false;
 		} 
 	}
+	
+	//Address musn't be null
 	if(!strcmp($ad,"")) {
 		echo "<script>alert('Null address');</script>";
 		return false;
 	}
-	//echo "<script>alert('Result ok');</script>";
 	return true;
 }
 
+//Get all details
 $name = $_POST["Name"];
 $roll = $_POST["Roll"];
 $dept = $_POST["dept"];
@@ -106,6 +115,7 @@ $address = $_POST["address"];
 $about = $_POST["about"];
 $pass = "Password";
 
+//Function to generate a random password
 function random_str($length, $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 {
     $str = '';
@@ -119,11 +129,7 @@ $pass = random_str(8);
 
 if(validateInp($name,$roll,$dept,$email,$address)){
 	$roll = (int) $roll;
-	//echo "Data entered is $name <br/>$roll<br/>$dept<br/>$email<br/>$address<br/>$about<br/>$pass";
-	//echo "<script>alert('Inserting now');</script>";
-	
-	//$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email) VALUES (?, ?, ?)");
-	//$stmt->bind_param("sss", $firstname, $lastname, $email);
+	//Prepare statement to prevent SQL injection
 	$mysql_qry = $conn->prepare("insert into spider_2016_2(Roll,Name,Dept,Email,Address,About,Password) values(?,?,?,?,?,?,?)");
 	$mysql_qry->bind_param("issssss",$roll,$name,$dept,$email,$address,$about,$pass);
 	$bo = $mysql_qry->execute();
@@ -134,27 +140,19 @@ if(validateInp($name,$roll,$dept,$email,$address)){
 		$message = "Your password is $pass";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		echo "<script type='text/javascript'>alert('Please remember your password is $pass');window.location.href='/Spider_2016_2/';</script>";
-		//header('Location: http://localhost/Spider_2016_2/');
-		//exit;
-	//$redirect_page = '/Spider_2016_2/';
 	}
 	else{
 		echo "<br/>Couldn\'t create record.";
 		$message = "Unsuccessful!!";
 		echo "<script type='text/javascript'>alert('$message');window.location.href='/Spider_2016_2/addData.html';</script>";
-	//$redirect_page = '/Spider_2016_2/addData.html';
-		//header('Location: http://localhost/Spider_2016_2/addData.html');
-		//exit;
 	}
 	$mysql_qry->close();
 	$conn->close();
 }
 else{
 	echo "<script type='text/javascript'>alert('$message');window.location.href='/Spider_2016_2/addData.html';</script>";
-	//header('Location: http://localhost/Spider_2016_2/addData.html');
-	//exit;
 }
-//header('Location: '.$redirect_page);
+
 ?>
 </body>
 </html>

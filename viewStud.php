@@ -8,27 +8,30 @@
 	</head>
 <body>
 <?php
+//Connect to the database.
 require "connect.php";
 
+
+//Make the form to resubmit on reload.
 header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
 header("Cache-Control: post-check=0, pre-check=0", false);
 header("Pragma: no-cache");
 
+//Error message variable.
 $message = "Hello";
 
+//Function to validate the input.
 function validateInp($r){
 	global $message;
 	
+	//Check roll number
 	if(!(preg_match("/^[0-9]{9}$/",$r))){
 		$message = "Invalid roll number";
 		echo "<script>alert('$message');</script>";
-		//^[0-9]{2}$
-		//\d{9}
 		return false;
 	}
 
 	if(floor($r/pow(10,8)) != 1){
-		//alert('Incorrect Roll Number');
 		$message = "Incorrect roll number";
 		echo "<script>alert('$message');</script>";
 		return false;
@@ -41,9 +44,12 @@ function validateInp($r){
 	}
 	return true;
 }
+
+//Get the roll number
 $roll = $_GET["Roll"];
 echo "Data entered is $roll<br/>";
 if(validateInp($roll)){
+	//Prepare the statement to prevent SQL injection
 	$sql = $conn->prepare("SELECT Name,Roll,Dept,Email,Address,About FROM spider_2016_2 where Roll = ?");
 	$sql->bind_param("i",$roll);   
 	$sql->execute();
@@ -61,6 +67,7 @@ if(validateInp($roll)){
 		}
 		echo "</table>";
 		echo "<br/><br/>";
+		//Set the Session variables with the names for editing purposes.
 		$_SESSION["Roll"] = $rol;
 		$_SESSION["Dept"] = $dep;
 		echo "<a href='editData.php'><button id='editData'>Edit Details of this Student</button></a>";

@@ -1,8 +1,11 @@
+//Client side validation for getting the rolll number
 function viewS(){
 	return validate();
 }
 function validate(){
+	//Get roll number value(r)
 	var r = document.getElementById("Roll").value;
+	//Check roll number for valid details.
 	if(Math.floor(r/Math.pow(10,8)) != 1){
 		alert('Incorrect Roll Number');
 		return false;

@@ -13,6 +13,7 @@ header("Pragma: no-cache");
 
 $message = "Hello";
 
+//Function to validate the input
 function validateInp($d){
 	global $message;
 	if(strcmp($d,'Architecture')&&strcmp($d,'Chemical')&&strcmp($d,'CSE')&&strcmp($d,'EEE')&&strcmp($d,'ECE')&&
@@ -22,9 +23,11 @@ function validateInp($d){
 	}
 	return true;
 }
+//Get the department
 $dept = $_GET["dept"];
 //echo "Data entered is $roll<br/>";
 if(validateInp($dept)){
+	//Prepare SELECT statement to prevent SQL injection
 	$sql = $conn->prepare("SELECT Name,Roll,Dept,Email,Address,About FROM spider_2016_2 where Dept = ? order by Roll ASC");
 	$sql->bind_param("s",$dept);   
 	$sql->execute();

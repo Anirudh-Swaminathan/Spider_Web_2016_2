@@ -1,3 +1,4 @@
+<!-- Group all data by department -->
 <!DOCTYPE html>
 <html>
 	<head>

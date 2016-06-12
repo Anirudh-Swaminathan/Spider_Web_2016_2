@@ -1,15 +1,14 @@
+//Client Side validation
 function btnClick(){
 	//alert("Hi There. I am going to submit.");
 	return validate();
 }
 function validate(){
+	//Get roll(r), department(d), name(n) and mail(m)
 	var r = document.getElementById("Roll").value;
 	var d = document.getElementById("dept").value;
 	var n = document.getElementById("Name").value;
 	var m = document.getElementById("email").value;
-	//var y = document.getElementById("year").value;
-	//alert('Roll is '+r);
-	//alert('1st digit is '+Math.floor(r/Math.pow(10,8)));
 	//Roll Number Checking
 	if(Math.floor(r/Math.pow(10,8)) != 1){
 		alert('Incorrect Roll Number');
@@ -20,7 +19,6 @@ function validate(){
 		alert('Incorrect Roll Number');
 		return false;
 	}
-	//alert(''+Math.floor(r/Math.pow(10,6)));
 	//Department Checking
 	if(!(Math.floor(r/Math.pow(10,6)) ===102 && d === 'Chemical'||Math.floor(r/Math.pow(10,6)) ===106 && d === 'CSE'
 		||Math.floor(r/Math.pow(10,6)) ===107 && d === 'EEE'||Math.floor(r/Math.pow(10,6)) ===101 && d === 'Architecture'
@@ -35,13 +33,11 @@ function validate(){
 		alert('No Letter Found in name');
 		return false;
 	}
-	//else return false;
 	if(/\d/.test(n)){
 		alert('Name shouldn\'t contain any number');  
 		return false;
 	  } 
 	//Check mail
-	//alert('Mail is '+m);
 	if(m.length!=18){
 		alert('Enter valid email. Should be \'your roll number\'@nitt.edu');
 		return false;
@@ -49,7 +45,6 @@ function validate(){
 	else{
 		var ro = m.substring(0,9);
 		var en = m.substring(9,18);
-		//alert('ro is '+ro+'\nen is '+en);
 		if(!(ro === r)){			
 			alert("Valid Email is'your roll number'@nitt.edu");
 			return false;
